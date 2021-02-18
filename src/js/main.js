@@ -1,7 +1,6 @@
 let cnv,ctx;
 let DOTS=[],MS=[],SQUARE_COLORS=["#FF6103","#DC143C","#97FFFF","#FF3030","#00EE00","#FF69B4"],SCORE=0;
 let squares=[],cur_sel=[];
-//////////////////////////////
 function create_dots(w){
 	w+=1
 	var sx=250-(w*25-25/2)/2,sy=250-(w*25-25/2)/2
