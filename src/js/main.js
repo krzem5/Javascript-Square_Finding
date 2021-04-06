@@ -16,13 +16,13 @@ function distance(a,b){
 	return Math.sqrt(Math.pow(b[0]-a[0],2)+Math.pow(b[1]-a[1],2))
 }
 function check_square(p){
-	var s=[],eqs1=-1,eqs2=-1,neqs=-1
+	var s=[],eqs1=-1,neqs=-1
 	s.push(distance(p[0],p[1]))
 	s.push(distance(p[0],p[2]))
 	s.push(distance(p[0],p[3]))
-	if (s[0]==s[1]&&s[0]!=s[2]){eqs1=0;eqs2=1;neqs=2}
-	else if (s[1]==s[2]&&s[1]!=s[0]){eqs1=1;eqs2=2;neqs=0}
-	else if (s[0]==s[2]&&s[0]!=s[1]){eqs1=0;eqs2=2;neqs=1}
+	if (s[0]==s[1]&&s[0]!=s[2]){eqs1=0=;neqs=2}
+	else if (s[1]==s[2]&&s[1]!=s[0]){eqs1=1=;neqs=0}
+	else if (s[0]==s[2]&&s[0]!=s[1]){eqs1=0=;neqs=1}
 	if (eqs1!=-1){
 		var opp=0
 		switch (neqs){
@@ -33,9 +33,9 @@ function check_square(p){
 		}
 		if (opp==s[neqs]){
 			var di=opp,ad=s[eqs1]
-			for (a=0;a<4;a++){
+			for (let a=0;a<4;a++){
 				var dc=0,ac=0
-				for (b=0;b<4;b++){
+				for (let b=0;b<4;b++){
 					if (a!=b){
 						var dist=distance(p[a],p[b])
 						if (dist==di){dc++}
@@ -59,8 +59,8 @@ function check_overlap(ps){
 	for (var s of squares){
 		var st=true
 		for (var p of s[0]){
-			x=(p[0]-MS[0]-4)/25
-			y=(p[1]-MS[1]-4)/25
+			let x=(p[0]-MS[0]-4)/25
+			let y=(p[1]-MS[1]-4)/25
 			if (!(_ina(ps,[x,y]))){st=false}
 		}
 		if (st){return false}
@@ -68,7 +68,7 @@ function check_overlap(ps){
 	return true
 }
 function get_score(p){
-	s=Math.round(Math.pow(distance(p[0],p[1]),2))
+	let s=Math.round(Math.pow(distance(p[0],p[1]),2))
 	var dx=Math.abs(p[1][0]-p[0][0]),dy=Math.abs(p[1][1]-p[0][1])
 	if (dx==dy){s*=1.5}
 	else if (dx>0&&dy>0&&dx!=dy){s*=2}
@@ -136,7 +136,7 @@ function draw(){
 		if (s[2]>0){
 			ctx.fillStyle=`${s[1]}${(Math.floor(s[2]*(256/100))).toString(16).padStart(2,"0")}`;
 			ctx.fill();
-			s[2]-=1
+			s[2]-=1;
 		}
 	}
 	requestAnimationFrame(draw);
