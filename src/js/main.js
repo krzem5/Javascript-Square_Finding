@@ -20,9 +20,9 @@ function check_square(p){
 	s.push(distance(p[0],p[1]))
 	s.push(distance(p[0],p[2]))
 	s.push(distance(p[0],p[3]))
-	if (s[0]==s[1]&&s[0]!=s[2]){eqs1=0=;neqs=2}
-	else if (s[1]==s[2]&&s[1]!=s[0]){eqs1=1=;neqs=0}
-	else if (s[0]==s[2]&&s[0]!=s[1]){eqs1=0=;neqs=1}
+	if (s[0]==s[1]&&s[0]!=s[2]){eqs1=0;neqs=2}
+	else if (s[1]==s[2]&&s[1]!=s[0]){eqs1=1;neqs=0}
+	else if (s[0]==s[2]&&s[0]!=s[1]){eqs1=0;neqs=1}
 	if (eqs1!=-1){
 		var opp=0
 		switch (neqs){
